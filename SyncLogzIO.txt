@@ -1,0 +1,11 @@
+  <targets>
+      <target name="logzIO" xsi:type="LogzIO"
+               host="listener.logz.io"
+               port="5050"
+               typeField="FieldNameToUseAsTypeFromNLogsProperties"
+               LogzAccountToken="" />
+  </targets>
+
+  <rules>
+	<logger name="*" levels="Error,Info,Warn,Debug" writeTo="logzIO" />
+  </rules>
