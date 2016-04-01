@@ -18,7 +18,6 @@ The parameter named “typeField “  should include the name of the property th
 For ex : in case you set that parameter to be “RoleName” and then sends NLog message using the following code:
 
 ```
-
 Logger mLogger = LogManager.GetLogger(name);
 mLogger.Log(LogLevel.Debug)
        .Message(“Some Message”)
