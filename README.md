@@ -17,12 +17,13 @@ About the implementation:
 The parameter named “typeField “  should include the name of the property that will be used as the type of the message,
 For ex : in case you set that parameter to be “RoleName” and then sends NLog message using the following code:
 
- 
+```
+
 Logger mLogger = LogManager.GetLogger(name);
 mLogger.Log(LogLevel.Debug)
-                .Message(“Some Message”)
-                .Properties(new Dictionary<string, object>(){{"RoleName", "LogType-RoleName"}, {"OtherProperty", "TestProp"}})
-                .Write();
- 
+       .Message(“Some Message”)
+       .Properties(new Dictionary<string, object>(){{"RoleName", "LogType-RoleName"}, {"OtherProperty", "TestProp"}})
+       .Write();
+```
 The target will put “LogType-RoleName” as the type of the message 
 In case you don’t add the property “RoleName” it will put “json” as the default type.
