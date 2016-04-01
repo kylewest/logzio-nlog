@@ -4,6 +4,7 @@ NLog target for Logz.io
 Community Plugin -  Send logs from NLog
 
 There are 2 Nlog’s config file:
+
 1. Using NLog’s AsyncWrapper – NLog has a generic async wrapper that writes all the messages to a queue and every 50ms it reads 100 items from it and sends It to the target, the limit of the queue is 10000 but and it discards messages if the queue is empty. All this parameters are configurable, you can read more about it in https://github.com/nlog/NLog/wiki/AsyncWrapper-target.
 
 2. Sync target - Calls the target on every message
