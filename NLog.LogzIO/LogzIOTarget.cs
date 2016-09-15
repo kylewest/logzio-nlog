@@ -115,7 +115,8 @@ namespace NLog.LogzIO
 
         private static string GetFilteredMessage(LogEventInfo logEvent)
         {
-            return new string(logEvent.Message.Where(c => (int) c >= 32 && (int) c <= 126).ToArray());
+            var message = logEvent.FormattedMessage;
+            return new string(message.Where(c => (int)c >= 32 && (int)c <= 126).ToArray());
         }
 
         private string GetFieldNameToUseAsDateType(IDictionary<object, object> logEventProperties)
