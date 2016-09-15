@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>$id$</id>
+        <version>$version$</version>
+        <title>$title$</title>
+        <authors>kylewest</authors>
+        <owners>kylewest</owners>
+        <licenseUrl>https://github.com/kylewest/logzio-nlog/blob/master/license.markdown</licenseUrl>
+        <projectUrl>https://github.com/kylewest/logzio-nlog</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>NLog target for shipping logs to logz.io</description>
+        <releaseNotes />
+        <copyright>Copyright 2016</copyright>
+        <tags>nlog logz logz.io logzio logging</tags>
+    </metadata>
+</package>
