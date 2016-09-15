@@ -15,7 +15,7 @@ namespace NLog.LogzIO
             Level = pLevel.ToString();
             Exception = pException;
         }
-        
+
         public string Token { get; set; }
         public string Message { get; set; }
         public DateTime LogTimestamp { get; set; }

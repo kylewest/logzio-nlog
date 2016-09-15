@@ -91,7 +91,7 @@ namespace NLog.LogzIO
                 var logEventProperties = logEvent.Properties;
 
                 var fieldNameToUseAsDataType = GetFieldNameToUseAsDateType(logEventProperties);
-                
+
                 // In case we have NewLine LogzIO may translate it as 2 different messages
                 var message = GetFilteredMessage(logEvent).Replace(Environment.NewLine, " ");
 
