@@ -24,6 +24,7 @@ namespace NLog.LogzIO
 
         [RequiredParameter]
         public string LogzAccountToken { get; set; }
+        public string Application { get; set; }
 
         private Socket mClient;
         private static string mLocalHostName;
@@ -92,12 +93,12 @@ namespace NLog.LogzIO
 
                 var fieldNameToUseAsDataType = GetFieldNameToUseAsDateType(logEventProperties);
 
-                // In case we have NewLine LogzIO may translate it as 2 different messages
-                var message = GetFilteredMessage(logEvent).Replace(Environment.NewLine, " ");
-
-                var messageToSend = new LogzIOLogEventInfo(LogzAccountToken, message, DateTime.UtcNow, HostName, logEvent.Level, logEvent.Exception)
+                var messageToSend = new LogzIOLogEventInfo(LogzAccountToken, logEvent.FormattedMessage, logEvent.TimeStamp, HostName, logEvent.Level.ToString())
                 {
-                    Type = fieldNameToUseAsDataType ?? "json",
+                    Application = Application,
+                    Type = fieldNameToUseAsDataType ?? "nlog",
+                    LoggerName = logEvent.LoggerName,
+                    Exception = logEvent.Exception,
                     Details = logEventProperties
                 };
 
