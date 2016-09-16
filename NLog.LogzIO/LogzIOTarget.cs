@@ -38,7 +38,7 @@ namespace NLog.LogzIO
             mJsonSerializerSettings = new JsonSerializerSettings
             {
                 ContractResolver = new LowercaseContractResolver(),
-                DateFormatString = "dd/MM/yyyy hh:mm:ss.ff"
+                DateFormatString = "MM/dd/yyyy hh:mm:ss.ff"
             };
 
             mClient = new Socket(SocketType.Stream, ProtocolType.Tcp);
